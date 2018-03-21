@@ -1,6 +1,5 @@
 // space inviders
 
-//++ #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <string>
@@ -14,18 +13,16 @@
 #define SCREENX 800
 #define SCREENY 600
 
-double scale;   //=0.5;
+double scale;
 const int enemy_x=50;
 double max_timer_enemy_move=800;
-bool move_right=1; //++ ,wyjdz=0;
+bool move_right=1;
 double delta_x;
 
 sf::Clock timer_shoot;
 sf::Clock timer_change_texture;
 sf::Clock timer_enemy_move;
-// int bok=1;
-// sf::Clock ruchwdol;
-//sf::CircleShape mojstatek(25, 3);
+
 bool change_texture=true;
 bool move_change;
 const int enemy_total=36;
@@ -37,31 +34,7 @@ double x;
 double y;
 
 };
-/* ++
-struct Strzal
-{
-double x;
-double y;
 
-sf:: RectangleShape pocisk;
-public: Missle(double f_x =0.0, double f_y=0.0)
-:x(f_x)
-,y(f_y)
-{}
-};
-
-struct Bomba
-{
-double x;
-double y;
-
-sf:: RectangleShape bombshape;
-public: Bomba(double f_x , double f_y)
-:x(f_x)
-,y(f_y)
-{}
-};
-  */
 struct Missle
 {
 double x;
@@ -83,13 +56,8 @@ struct Enemy
 
 };
 
-
-
-
-
 Enemy enemylist[enemy_total];
-//typedef std::vector < Missle > Strzelanie;
- //   Strzelanie strzal;
+
 std::vector < Missle > shoot;
 std::vector < Missle > bomb;
 Ship ship;
@@ -406,7 +374,6 @@ if (!texture_ship.loadFromFile("ship.png"))
 //--------------------------------------------------------------
 int main()
 {
-//++    int score=0;
 
     srand (time(NULL));        /* initialize random seed: */
     window.create(sf::VideoMode(800, 600), "Space Invaders"); // initiate window
@@ -423,7 +390,6 @@ text.setFont(font);
 if (load_sound_textures()==-1)
          return -1;
 
-//text.setString("Hello");
 sf::Clock clock;
 timer_enemy_move.restart();
 timer_shoot.restart();
